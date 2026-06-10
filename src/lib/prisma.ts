@@ -11,11 +11,21 @@ const prismaClientSingleton = () => {
 };
 
 declare global {
-  var prisma: undefined | ReturnType<typeof prismaClientSingleton>;
+  var prisma: undefined | PrismaClient;
 }
 
-const prisma = globalThis.prisma ?? prismaClientSingleton();
+function getPrismaClient() {
+  const client = globalThis.prisma ?? prismaClientSingleton();
+  if (process.env.NODE_ENV !== "production") globalThis.prisma = client;
+  return client;
+}
+
+const prisma = new Proxy({} as PrismaClient, {
+  get(_target, prop) {
+    const client = getPrismaClient();
+    const value = client[prop as keyof PrismaClient];
+    return typeof value === "function" ? value.bind(client) : value;
+  },
+});
 
 export default prisma;
-
-if (process.env.NODE_ENV !== "production") globalThis.prisma = prisma;
