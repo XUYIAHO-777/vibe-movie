@@ -1,8 +1,31 @@
-# VibeMovie - Cinema of Emotions
+# VibeMovie - AI Mood-Based Movie Recommendation App
 
-VibeMovie is a mood-based movie recommendation web app. Instead of asking users to choose a genre, it starts from their current emotional state, asks a few reflective questions, recommends films that match the user's "vibe", and saves the result into a personal emotional archive.
+Discover movies by emotional resonance instead of genre.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-PostgreSQL-2D3748?logo=prisma)](https://www.prisma.io/)
+[![AI](https://img.shields.io/badge/AI-DeepSeek-4B8BBE)](https://www.deepseek.com/)
+[![Movie Data](https://img.shields.io/badge/Movie%20Data-TMDB-01B4E4)](https://www.themoviedb.org/)
+[![Live Demo](https://img.shields.io/badge/Live-vibemovie.top-38BDF8)](https://vibemovie.top)
+
+VibeMovie is an AI-assisted mood-based movie recommendation web app. Instead of asking users to choose a genre, it starts from their current emotional state, asks a few reflective questions, recommends films that match the user's "vibe", and saves the result into a personal emotional archive.
 
 Live demo: [https://vibemovie.top](https://vibemovie.top)
+
+![VibeMovie demo flow](docs/demo.gif)
+
+## Highlights
+
+- Emotion-first recommendation flow, not a static genre filter.
+- DeepSeek-powered reflection questions and movie recommendation reasoning.
+- TMDB-powered posters, ratings, and movie metadata.
+- Prisma and PostgreSQL-backed archive and public wall.
+- Cinematic responsive UI with visual presets and shareable result cards.
+
+## Why VibeMovie Is Different
+
+Most movie apps recommend films by genre, popularity, or rating. VibeMovie starts from the user's current emotional state and turns it into a cinematic recommendation journey: mood input, emotional resonance, reflective questions, curated films, archive, and public wall.
 
 ## Project Summary
 
@@ -27,6 +50,22 @@ The result is a small cinematic experience that combines AI conversation, movie 
 - Public emotion wall for shared resonance
 - Cinematic UI with animated transitions and visual presets
 - Shareable poster generation for selected recommendations
+
+## Quick Start
+
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+Required services:
+
+- DeepSeek API key
+- TMDB API key
+- PostgreSQL database
 
 ## Tech Stack
 
@@ -143,6 +182,19 @@ npx prisma generate
 npx prisma migrate deploy
 ```
 
+## Roadmap
+
+- [ ] Add a short narrated demo video for social sharing.
+- [ ] Add user accounts and personal movie collections.
+- [ ] Add fallback recommendations when DeepSeek or TMDB is unavailable.
+- [ ] Add API route tests and response schema validation tests.
+- [ ] Add mood analytics, weekly summaries, and exportable archive cards.
+- [ ] Continue splitting the remaining large UI sections into focused components.
+
+## Contributing
+
+This is a portfolio-first side project, but feedback and small improvements are welcome. Good first contributions include README improvements, UI polish, fallback states, accessibility fixes, and tests for API response parsing.
+
 ## Screenshots
 
 The screenshots below show the full user journey from mood input to recommendation, archive, public wall, and mobile layout.
@@ -176,11 +228,6 @@ This project was built through an AI-assisted vibecoding workflow. AI tools help
 - Persisting user records with Prisma and PostgreSQL
 - Building a visually distinctive, responsive Next.js interface
 
-## Future Improvements
+## Share This Project
 
-- Add user accounts and personal collections
-- Add richer mood analytics and weekly emotion summaries
-- Improve fallback recommendations when AI or TMDB requests fail
-- Add automated tests for API routes and schema validation
-- Split large UI files into smaller reusable components
-- Add accessibility and SEO refinements
+If you like the idea of recommending movies by mood instead of genre, consider starring the repository or sharing the live demo with someone who loves cinema.
