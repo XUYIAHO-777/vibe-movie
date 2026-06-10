@@ -76,15 +76,15 @@ flowchart TB
 
 ```txt
 .
-├── docs/                  # Project documentation, diagrams, and screenshots
-├── prisma/                # Prisma schema and migration files
-├── public/                # Static visual assets
-├── src/
-│   ├── app/               # Next.js pages and API routes
-│   └── lib/               # Shared server-side utilities
-├── .env.example           # Required environment variables
-├── package.json
-└── README.md
++-- docs/                  # Project documentation, diagrams, and screenshots
++-- prisma/                # Prisma schema and migration files
++-- public/                # Static visual assets
++-- src/
+|   +-- app/               # Next.js pages and API routes
+|   +-- lib/               # Shared server-side utilities
++-- .env.example           # Required environment variables
++-- package.json
++-- README.md
 ```
 
 ## API Overview
@@ -145,16 +145,23 @@ npx prisma migrate deploy
 
 ## Screenshots
 
-### Home
+The screenshots below show the full user journey from mood input to recommendation, archive, public wall, and mobile layout.
 
-![VibeMovie home screen](docs/screenshots/home.png)
+| Home | Emotional Resonance |
+| --- | --- |
+| ![VibeMovie home screen](docs/screenshots/home.png) | ![VibeMovie resonance screen](docs/screenshots/resonance.png) |
 
-Recommended additional screenshots before final portfolio sharing:
+| AI Questions | Movie Recommendations |
+| --- | --- |
+| ![AI-generated reflection questions](docs/screenshots/questions.png) | ![Personalized movie recommendation cards](docs/screenshots/recommendations.png) |
 
-- `questions.png` - AI-generated reflection questions
-- `recommendations.png` - movie recommendation cards
-- `archive.png` - saved mood records
-- `wall.png` - public emotion wall
+| Selected Result | Archive |
+| --- | --- |
+| ![Selected movie result screen](docs/screenshots/poster.png) | ![Saved mood archive](docs/screenshots/archive.png) |
+
+| Public Wall | Mobile Layout |
+| --- | --- |
+| ![Public emotion wall](docs/screenshots/wall.png) | ![Responsive mobile homepage](docs/screenshots/mobile.png) |
 
 ## Development Approach
 
